@@ -1,1 +1,12 @@
-This folder is to be used to store the code for your project. 
+# Docker Compose
+## GitHub ID
+- Devan Desai : devdes338
+- Nency : 
+
+## HuggingFace
+- Devan Desai : drd38
+- Nency : 
+
+### Commands to Build Image and Compose
+- docker build .
+- docker compose up

@@ -1,0 +1,30 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # environment:
+    #   - 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
+    ports:
+      - "8000:8000"
+
+  mongodb:
+    image: mongodb/mongodb-community-server:6.0.6-ubuntu2204
+    ports:
+      - "8001:8001"
+  qdrant:
+    image: qdrant/qdrant
+    ports:
+      - "8002:8002"
+  clearml:
+    command:
+      - apiserver
+    image: allegroai/clearml
+    environment:
+      CLEARML_WEB_HOST: https://app.clear.ml/
+      CLEARML_API_HOST: https://api.clear.ml
+      CLEARML_FILES_HOST: https://files.clear.ml
+      CLEARML_API_ACCESS_KEY: 4VYPTGCX8RASHZJY6XGE9LTTXFDCCX
+      CLEARML_API_SECRET_KEY: vb-BuH4G_4ttGDpExGDDJE6BFJL5d2zEGk133NKYj-SUlBmdzt4agY76ffslm40KLeI
+    ports:
+      - "8003:8003"
